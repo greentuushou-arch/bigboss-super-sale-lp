@@ -205,9 +205,29 @@
     opacity:.65;
   }
 
-  /* ---------------- Greeting speech bubble ---------------- */
-  .greeting{ background:var(--paper); padding:44px 0 36px; text-align:center; }
-  .greeting .bubble{
+  /* ---------------- Site header ---------------- */
+  .site-header{ background:var(--ink); color:var(--paper); }
+  .site-header .header-row{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:6px 12px;
+    padding-top:14px;
+    padding-bottom:14px;
+  }
+  .site-header .brand{ font-weight:900; font-size:16px; letter-spacing:.02em; }
+  .site-header .tagline{
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:.03em;
+    color:var(--paper);
+    opacity:.7;
+    white-space:nowrap;
+  }
+
+  /* ---------------- Speech bubble (shared) ---------------- */
+  .bubble{
     position:relative;
     display:inline-block;
     background:#fff;
@@ -217,7 +237,7 @@
     text-align:left;
     max-width:520px;
   }
-  .greeting .bubble:before{
+  .bubble:before{
     content:"";
     position:absolute;
     top:-17px;
@@ -227,7 +247,7 @@
     border-right:13px solid transparent;
     border-bottom:17px solid var(--ink);
   }
-  .greeting .bubble:after{
+  .bubble:after{
     content:"";
     position:absolute;
     top:-12px;
@@ -237,17 +257,22 @@
     border-right:10px solid transparent;
     border-bottom:13px solid #fff;
   }
-  .greeting .bubble .wave{
+  .bubble .wave{
     font-size:22px;
     font-weight:900;
     color:var(--red-deep);
     margin:0 0 10px;
   }
-  .greeting .bubble p{ margin:0 0 12px; font-size:17px; font-weight:700; line-height:1.85; }
-  .greeting .bubble p:last-child{ margin-bottom:0; }
+  .bubble p{ margin:0 0 12px; font-size:17px; font-weight:700; line-height:1.85; color:var(--ink); }
+  .bubble p:last-child{ margin-bottom:0; }
+
+  .greeting{ background:var(--paper); padding:44px 0 36px; text-align:center; }
 
   /* narrative lead-in line before each section */
   .lead-in{ font-size:16px; font-weight:700; margin:0 0 14px; opacity:.9; }
+
+  /* inline point highlight (secondary, smaller than main-event .point) */
+  .point-mid{ font-size:1.9em; }
 
   @media (max-width:520px){
     .inner{ padding:0 16px; }
@@ -255,12 +280,21 @@
     .main-event{ padding:48px 0 52px; }
     .oshi .grid{ gap:12px; }
     .cta{ padding:17px 32px; font-size:18px; }
+    .site-header .brand{ font-size:13.5px; }
+    .site-header .tagline{ font-size:10.5px; }
   }
 </style>
 </head>
 <body>
 
 <div class="page">
+
+  <header class="site-header">
+    <div class="inner header-row">
+      <a class="brand" href="https://www.rakuten.co.jp/bigbossshibazaki/" target="_blank" rel="noopener">酒のビッグボス</a>
+      <span class="tagline">楽天スーパーSALE特設ページ</span>
+    </div>
+  </header>
 
   <div class="fv">
     <div class="confetti" aria-hidden="true">
@@ -335,14 +369,17 @@
     <div class="inner">
       <p class="lead-in">エントリー不要でも、うれしい特典があります。</p>
       <p class="eyebrow">楽天スーパーSALE期間中</p>
-      <h2>エントリーなしでも<br>POINT <span class="num-lg">2</span><span class="unit">倍</span>商品<br>多数！</h2>
+      <h2>エントリーなしでも<br>POINT <span class="point-mid"><span class="num-lg">2</span><span class="unit">倍</span></span>商品<br>多数！</h2>
       <a class="cta cta-on-blue" href="#" target="_blank" rel="noopener">対象商品、あります。</a>
     </div>
   </section>
 
   <section class="on-yellow">
     <div class="inner">
-      <p class="lead-in">お会計の前に、こちらもチェック。</p>
+      <div class="bubble" style="margin-bottom:24px;">
+        <p>まずはクーポンをGETしておくとスムーズです。</p>
+        <p>決済画面で利用できるクーポンを選んでから、<br>確定ボタンを押してくださいね。</p>
+      </div>
       <p class="eyebrow">楽天スーパーSALE期間中</p>
       <h2>お得な COUPON<br>いろいろ！</h2>
       <a class="cta cta-on-yellow" href="#" target="_blank" rel="noopener">買う前にチェック。</a>
