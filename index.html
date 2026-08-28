@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BIG BOSS ワクワク祭り｜EVENT GUIDE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#e6231e;
+    --red-deep:#a8140f;
+    --blue:#164ea8;
+    --blue-deep:#0c2f6b;
+    --yellow:#ffde00;
+    --yellow-deep:#e0a800;
+    --paper:#fffcf2;
+    --ink:#1a1208;
+    --ink-dim:#5c4f3a;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:auto;}
+  body{
+    margin:0;
+    background:var(--blue-deep);
+    font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  @media (prefers-reduced-motion: reduce){ .confetti span{ animation:none !important; opacity:0; } }
+
+  .page{
+    max-width:780px;
+    margin:0 auto;
+    background:var(--paper);
+  }
+  .inner{ padding:0 20px; max-width:700px; margin:0 auto; }
+
+  /* ---------------- FV / confetti ---------------- */
+  .fv{
+    position:relative;
+    background:var(--red);
+    overflow:hidden;
+  }
+  .fv img{ width:100%; height:auto; display:block; }
+  .fv a{ display:block; }
+  .confetti{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:5;
+  }
+  .confetti span{
+    position:absolute;
+    top:-40px;
+    width:14px;
+    height:14px;
+    opacity:.95;
+    animation:confetti-fall linear infinite;
+  }
+  .confetti span:nth-child(4n){ background:var(--yellow); }
+  .confetti span:nth-child(4n+1){ background:#fff; }
+  .confetti span:nth-child(4n+2){ background:var(--blue); border-radius:50%; }
+  .confetti span:nth-child(4n+3){ background:var(--red-deep); }
+  @keyframes confetti-fall{
+    0%{ transform:translateY(-10%) rotate(0deg); }
+    100%{ transform:translateY(1150%) rotate(540deg); }
+  }
+
+  /* ---------------- Section rhythm ---------------- */
+  section{ padding:46px 0; text-align:center; }
+  .eyebrow{
+    font-size:15px;
+    font-weight:900;
+    letter-spacing:.08em;
+    margin:0 0 14px;
+  }
+  h2{
+    margin:0 0 16px;
+    font-weight:900;
+    font-size:clamp(30px,8vw,42px);
+    line-height:1.35;
+    text-wrap:balance;
+  }
+  .sub{
+    margin:0 0 24px;
+    font-weight:700;
+    font-size:19px;
+    opacity:.85;
+  }
+  p.desc{
+    margin:0 0 26px;
+    font-size:17px;
+    font-weight:500;
+    line-height:1.8;
+    color:var(--ink-dim);
+  }
+
+  /* section color themes */
+  .on-yellow{ background:var(--yellow); color:var(--ink); }
+  .on-red{ background:var(--red); color:#fff; }
+  .on-blue{ background:var(--blue); color:#fff; }
+  .on-paper{ background:var(--paper); color:var(--ink); }
+  .on-red .desc{ color:rgba(255,255,255,.85); }
+  .on-blue .desc{ color:rgba(255,255,255,.85); }
+
+  /* date badge */
+  .date-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-weight:900;
+    font-size:clamp(22px,5.5vw,30px);
+    padding:10px 22px;
+    border:3px solid currentColor;
+    border-radius:99px;
+    margin-bottom:22px;
+  }
+  .date-badge .arrow{ font-size:.7em; opacity:.7; }
+
+  /* CTA buttons */
+  .cta{
+    display:inline-block;
+    font-weight:900;
+    font-size:20px;
+    padding:20px 44px;
+    border-radius:99px;
+    letter-spacing:.02em;
+    box-shadow:0 6px 0 rgba(0,0,0,.2);
+  }
+  .cta:active{ transform:translateY(4px); box-shadow:0 2px 0 rgba(0,0,0,.2); }
+  .cta-on-red{ background:#fff; color:var(--red-deep); }
+  .cta-on-blue{ background:var(--yellow); color:var(--blue-deep); }
+  .cta-on-yellow{ background:var(--red); color:#fff; }
+  .cta-on-paper{ background:var(--blue); color:#fff; }
+
+  /* ---------------- MAIN section (biggest) ---------------- */
+  .main-event{ padding:64px 0 68px; }
+  .main-event .eyebrow{ font-size:17px; }
+  .main-event h2{ font-size:clamp(40px,11vw,58px); margin-bottom:10px; }
+  .main-event .point{
+    font-size:clamp(64px,18vw,96px);
+    font-weight:900;
+    line-height:1;
+    margin:6px 0 26px;
+  }
+  .main-event .point small{ font-size:.32em; font-weight:700; margin-right:6px; }
+  .main-event .date-badge{ font-size:clamp(24px,6vw,32px); }
+
+  /* ---------------- Product showcase ---------------- */
+  .oshi{ background:var(--paper); }
+  .oshi .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-top:8px;
+  }
+  .oshi .card{
+    background:#fff;
+    border:3px solid var(--ink);
+    border-radius:18px;
+    overflow:hidden;
+    text-align:left;
+  }
+  .oshi .card img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-bottom:3px solid var(--ink); }
+  .oshi .card .body{ padding:14px 16px 18px; }
+  .oshi .card .tag{
+    display:inline-block;
+    font-size:12.5px;
+    font-weight:900;
+    padding:3px 10px;
+    border-radius:99px;
+    margin-bottom:8px;
+  }
+  .oshi .card:nth-child(1) .tag{ background:var(--blue); color:#fff; }
+  .oshi .card:nth-child(2) .tag{ background:var(--red); color:#fff; }
+  .oshi .card:nth-child(3) .tag{ background:var(--yellow); color:var(--ink); }
+  .oshi .card:nth-child(4) .tag{ background:var(--ink); color:#fff; }
+  .oshi .card .name{ font-size:16px; font-weight:700; line-height:1.5; margin:0 0 8px; }
+  .oshi .card .link{ font-size:14px; font-weight:900; color:var(--red-deep); }
+
+  /* ---------------- Closing ---------------- */
+  .closing{ background:var(--ink); color:var(--paper); padding:54px 0; }
+  .closing h2{ font-size:clamp(24px,6.5vw,30px); margin-bottom:18px; }
+  .closing .cta{ background:var(--yellow); color:var(--ink); }
+  .closing footer{
+    margin-top:44px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,252,242,.2);
+    font-size:13px;
+    opacity:.65;
+  }
+
+  @media (max-width:520px){
+    .inner{ padding:0 16px; }
+    section{ padding:36px 0; }
+    .main-event{ padding:48px 0 52px; }
+    .oshi .grid{ gap:12px; }
+    .cta{ padding:17px 32px; font-size:18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="fv">
+    <div class="confetti" aria-hidden="true">
+      <span style="left:4%; animation-duration:3.6s; animation-delay:-1.2s;"></span>
+      <span style="left:11%; animation-duration:4.2s; animation-delay:-0.4s;"></span>
+      <span style="left:19%; animation-duration:3.2s; animation-delay:-2.6s;"></span>
+      <span style="left:27%; animation-duration:4.8s; animation-delay:-1.8s;"></span>
+      <span style="left:35%; animation-duration:3.9s; animation-delay:-3.1s;"></span>
+      <span style="left:43%; animation-duration:3.4s; animation-delay:-0.9s;"></span>
+      <span style="left:51%; animation-duration:4.5s; animation-delay:-2.2s;"></span>
+      <span style="left:59%; animation-duration:3.7s; animation-delay:-1.5s;"></span>
+      <span style="left:67%; animation-duration:4.1s; animation-delay:-3.4s;"></span>
+      <span style="left:74%; animation-duration:3.3s; animation-delay:-0.6s;"></span>
+      <span style="left:82%; animation-duration:4.6s; animation-delay:-2.9s;"></span>
+      <span style="left:89%; animation-duration:3.8s; animation-delay:-1.1s;"></span>
+      <span style="left:6%; animation-duration:4.9s; animation-delay:-3.7s;"></span>
+      <span style="left:23%; animation-duration:3.5s; animation-delay:-2.0s;"></span>
+      <span style="left:47%; animation-duration:4.3s; animation-delay:-0.2s;"></span>
+      <span style="left:63%; animation-duration:3.9s; animation-delay:-2.5s;"></span>
+      <span style="left:78%; animation-duration:4.4s; animation-delay:-1.6s;"></span>
+      <span style="left:94%; animation-duration:3.6s; animation-delay:-3.0s;"></span>
+    </div>
+    <img src="images/fv_a_hero.jpg" alt="Rakuten スーパーSALE 9/4 20:00→9/11 01:59 超お得な7日間！ビッグボスのワクワク祭り！">
+    <a href="#" target="_blank" rel="noopener">
+      <img src="images/fv_b_entry.jpg" alt="エントリーでおトク！スーパーSALE期間中ずーっとPOINT5倍！店内全品対象 エントリーはこちら">
+    </a>
+    <a href="https://www.rakuten.co.jp/bigbossshibazaki/contents/202608_max10000point/" target="_blank" rel="noopener">
+      <img src="images/fv_c_chance.jpg" alt="最大チャンス！9月中はずーっとポイント山分けキャンペーン 最大10,000POINT当たる！詳細はこちら">
+    </a>
+    <img src="images/fv_d_bottom.jpg" alt="お得なCOUPONいろいろ！ BIG BOSS今月の推し。金麦・金麦糖質75%オフ・角ハイボール・こだわり酒場レモンサワー等">
+  </div>
+
+  <section class="on-red" style="padding:34px 0;">
+    <p class="eyebrow" style="font-size:13px; opacity:.85;">BIG BOSS ワクワク祭り</p>
+    <h2 style="font-size:clamp(24px,6.5vw,32px); margin-bottom:0;">EVENT GUIDE</h2>
+  </section>
+
+  <section class="on-yellow">
+    <div class="inner">
+      <p class="eyebrow">POINT UP CAMPAIGN</p>
+      <div class="date-badge">09.01 <span class="wd">TUE</span><span class="arrow">→</span>09.30 <span class="wd">WED</span></div>
+      <h2>最大10,000<br>POINT 当たる！</h2>
+      <p class="sub">9月いっぱい開催</p>
+      <a class="cta cta-on-yellow" href="https://www.rakuten.co.jp/bigbossshibazaki/contents/202608_max10000point/" target="_blank" rel="noopener">まずはここから。</a>
+    </div>
+  </section>
+
+  <section class="on-red main-event">
+    <div class="inner">
+      <p class="eyebrow">楽天スーパーSALE</p>
+      <div class="date-badge">09.04 <span class="wd">FRI</span> 20:00<span class="arrow">→</span>09.11 <span class="wd">FRI</span> 01:59</div>
+      <h2>エントリーするだけで</h2>
+      <div class="point"><small>POINT</small>5倍！</div>
+      <p class="desc">店内全品対象</p>
+      <a class="cta cta-on-red" href="#" target="_blank" rel="noopener">エントリーはこちら</a>
+    </div>
+  </section>
+
+  <section class="on-blue">
+    <div class="inner">
+      <p class="eyebrow">楽天スーパーSALE期間中</p>
+      <h2>エントリーなしでも<br>POINT 2倍商品<br>多数！</h2>
+      <a class="cta cta-on-blue" href="#" target="_blank" rel="noopener">対象商品、あります。</a>
+    </div>
+  </section>
+
+  <section class="on-yellow">
+    <div class="inner">
+      <p class="eyebrow">楽天スーパーSALE期間中</p>
+      <h2>お得な COUPON<br>いろいろ！</h2>
+      <a class="cta cta-on-yellow" href="#" target="_blank" rel="noopener">買う前にチェック。</a>
+    </div>
+  </section>
+
+  <section class="oshi">
+    <div class="inner">
+      <p class="eyebrow" style="color:var(--red-deep);">BIG BOSS</p>
+      <h2>今月の<span style="color:var(--red-deep);">推し。</span></h2>
+      <div class="grid">
+        <a class="card" href="https://item.rakuten.co.jp/bigbossshibazaki/4901777185272-sbl-2/" target="_blank" rel="noopener">
+          <img src="images/product-kinmugi.jpg" alt="金麦">
+          <div class="body">
+            <span class="tag">金麦</span>
+            <p class="name">サントリー 金麦 350ml×2ケース/48本</p>
+            <span class="link">商品を見る ↗</span>
+          </div>
+        </a>
+        <a class="card" href="https://item.rakuten.co.jp/bigbossshibazaki/4901777230071-sbl-2/" target="_blank" rel="noopener">
+          <img src="images/product-kinmugi75.jpg" alt="金麦 糖質75%オフ">
+          <div class="body">
+            <span class="tag">金麦 糖質75%オフ</span>
+            <p class="name">サントリー 金麦 糖質75%オフ 350ml×2ケース/48本</p>
+            <span class="link">商品を見る ↗</span>
+          </div>
+        </a>
+        <a class="card" href="https://item.rakuten.co.jp/bigbossshibazaki/4901777201439-sbl-2/" target="_blank" rel="noopener">
+          <img src="images/product-highball.jpg" alt="角ハイボール">
+          <div class="body">
+            <span class="tag">角ハイボール</span>
+            <p class="name">サントリー 角ハイボール缶 350ml×2ケース/48本</p>
+            <span class="link">商品を見る ↗</span>
+          </div>
+        </a>
+        <a class="card" href="https://item.rakuten.co.jp/bigbossshibazaki/4901777332508-sbl-2/" target="_blank" rel="noopener">
+          <img src="images/product-lemonsour.jpg" alt="こだわり酒場のレモンサワー">
+          <div class="body">
+            <span class="tag">こだわり酒場 etc.</span>
+            <p class="name">サントリー こだわり酒場のレモンサワー 350ml×2ケース/48本</p>
+            <span class="link">商品を見る ↗</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="inner">
+      <h2>超お得な7日間、<br>お見逃しなく！</h2>
+      <a class="cta" href="https://www.rakuten.co.jp/bigbossshibazaki/" target="_blank" rel="noopener">酒のビッグボス ショップをのぞく ↗</a>
+      <footer>酒のビッグボス｜楽天スーパーSALE ワクワク祭り EVENT GUIDE</footer>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
