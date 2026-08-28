@@ -281,6 +281,15 @@
   /* inline point highlight (secondary, smaller than main-event .point) */
   .point-mid{ font-size:1.9em; }
 
+  /* campaign section headline — big attention grab, tuned separately for mobile */
+  .point-headline{
+    font-size:clamp(40px,11vw,126px);
+    line-height:1.15;
+  }
+  @media (max-width:520px){
+    .point-headline{ font-size:clamp(38px,15vw,64px); line-height:1.2; }
+  }
+
   @media (max-width:520px){
     .inner{ padding:0 16px; }
     section{ padding:36px 0; }
@@ -354,7 +363,7 @@
       <p class="lead-in">まずはこちらから。</p>
       <p class="eyebrow">POINT UP CAMPAIGN</p>
       <div class="date-badge"><span class="d-part">09.01 <span class="wd">TUE</span></span><span class="d-part"><span class="arrow">→</span> 09.30 <span class="wd">WED</span></span></div>
-      <h2>最大10,000<br>POINT 当たる！</h2>
+      <h2 class="point-headline">最大10,000<br>POINT 当たる！</h2>
       <p class="sub">9月いっぱい開催</p>
       <a class="cta cta-on-yellow" href="https://www.rakuten.co.jp/bigbossshibazaki/contents/202608_max10000point/" target="_blank" rel="noopener">まずはここから。</a>
     </div>
