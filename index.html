@@ -149,6 +149,8 @@
     margin:6px 0 26px;
   }
   .main-event .point small{ font-size:.32em; font-weight:700; margin-right:6px; }
+  .num-lg{ font-size:1.08em; }
+  .unit{ font-size:.62em; font-weight:900; }
   .main-event .date-badge{ font-size:clamp(24px,6vw,32px); }
 
   /* ---------------- Product showcase ---------------- */
@@ -195,6 +197,50 @@
     opacity:.65;
   }
 
+  /* ---------------- Greeting speech bubble ---------------- */
+  .greeting{ background:var(--paper); padding:44px 0 36px; text-align:center; }
+  .greeting .bubble{
+    position:relative;
+    display:inline-block;
+    background:#fff;
+    border:3px solid var(--ink);
+    border-radius:22px;
+    padding:26px 26px 24px;
+    text-align:left;
+    max-width:520px;
+  }
+  .greeting .bubble:before{
+    content:"";
+    position:absolute;
+    top:-17px;
+    left:38px;
+    width:0; height:0;
+    border-left:13px solid transparent;
+    border-right:13px solid transparent;
+    border-bottom:17px solid var(--ink);
+  }
+  .greeting .bubble:after{
+    content:"";
+    position:absolute;
+    top:-12px;
+    left:41px;
+    width:0; height:0;
+    border-left:10px solid transparent;
+    border-right:10px solid transparent;
+    border-bottom:13px solid #fff;
+  }
+  .greeting .bubble .wave{
+    font-size:22px;
+    font-weight:900;
+    color:var(--red-deep);
+    margin:0 0 10px;
+  }
+  .greeting .bubble p{ margin:0 0 12px; font-size:17px; font-weight:700; line-height:1.85; }
+  .greeting .bubble p:last-child{ margin-bottom:0; }
+
+  /* narrative lead-in line before each section */
+  .lead-in{ font-size:16px; font-weight:700; margin:0 0 14px; opacity:.9; }
+
   @media (max-width:520px){
     .inner{ padding:0 16px; }
     section{ padding:36px 0; }
@@ -239,6 +285,16 @@
     <img src="images/fv_d_bottom.jpg" alt="お得なCOUPONいろいろ！ BIG BOSS今月の推し。金麦・金麦糖質75%オフ・角ハイボール・こだわり酒場レモンサワー等">
   </div>
 
+  <section class="greeting">
+    <div class="inner">
+      <div class="bubble">
+        <p class="wave">いらっしゃいませ！</p>
+        <p>年に4回しかない、楽天スーパーSALE。<br>ビッグボスでも、この期間に合わせて様々な企画をご用意しております。</p>
+        <p>ひとつずつ、のぞいていってくださいね。</p>
+      </div>
+    </div>
+  </section>
+
   <section class="on-red" style="padding:34px 0;">
     <p class="eyebrow" style="font-size:13px; opacity:.85;">BIG BOSS ワクワク祭り</p>
     <h2 style="font-size:clamp(24px,6.5vw,32px); margin-bottom:0;">EVENT GUIDE</h2>
@@ -246,6 +302,7 @@
 
   <section class="on-yellow">
     <div class="inner">
+      <p class="lead-in">まずはこちらから。</p>
       <p class="eyebrow">POINT UP CAMPAIGN</p>
       <div class="date-badge">09.01 <span class="wd">TUE</span><span class="arrow">→</span>09.30 <span class="wd">WED</span></div>
       <h2>最大10,000<br>POINT 当たる！</h2>
@@ -256,10 +313,11 @@
 
   <section class="on-red main-event">
     <div class="inner">
+      <p class="lead-in">そして、今回いちばんの目玉がこちら。</p>
       <p class="eyebrow">楽天スーパーSALE</p>
       <div class="date-badge">09.04 <span class="wd">FRI</span> 20:00<span class="arrow">→</span>09.11 <span class="wd">FRI</span> 01:59</div>
       <h2>エントリーするだけで</h2>
-      <div class="point"><small>POINT</small>5倍！</div>
+      <div class="point"><small>POINT</small><span class="num-lg">5</span><span class="unit">倍</span>！</div>
       <p class="desc">店内全品対象</p>
       <a class="cta cta-on-red" href="#" target="_blank" rel="noopener">エントリーはこちら</a>
     </div>
@@ -267,14 +325,16 @@
 
   <section class="on-blue">
     <div class="inner">
+      <p class="lead-in">エントリー不要でも、うれしい特典があります。</p>
       <p class="eyebrow">楽天スーパーSALE期間中</p>
-      <h2>エントリーなしでも<br>POINT 2倍商品<br>多数！</h2>
+      <h2>エントリーなしでも<br>POINT <span class="num-lg">2</span><span class="unit">倍</span>商品<br>多数！</h2>
       <a class="cta cta-on-blue" href="#" target="_blank" rel="noopener">対象商品、あります。</a>
     </div>
   </section>
 
   <section class="on-yellow">
     <div class="inner">
+      <p class="lead-in">お会計の前に、こちらもチェック。</p>
       <p class="eyebrow">楽天スーパーSALE期間中</p>
       <h2>お得な COUPON<br>いろいろ！</h2>
       <a class="cta cta-on-yellow" href="#" target="_blank" rel="noopener">買う前にチェック。</a>
@@ -283,6 +343,7 @@
 
   <section class="oshi">
     <div class="inner">
+      <p class="lead-in" style="color:var(--ink);">そして最後に、</p>
       <p class="eyebrow" style="color:var(--red-deep);">BIG BOSS</p>
       <h2>今月の<span style="color:var(--red-deep);">推し。</span></h2>
       <div class="grid">
