@@ -23,7 +23,7 @@
   html{scroll-behavior:auto;}
   body{
     margin:0;
-    background:var(--blue-deep);
+    background:var(--paper);
     font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;
     color:var(--ink);
     -webkit-font-smoothing:antialiased;
@@ -111,15 +111,19 @@
   /* date badge */
   .date-badge{
     display:inline-flex;
+    flex-wrap:wrap;
     align-items:center;
-    gap:10px;
+    justify-content:center;
+    gap:4px 10px;
     font-weight:900;
     font-size:clamp(22px,5.5vw,30px);
     padding:10px 22px;
     border:3px solid currentColor;
-    border-radius:99px;
+    border-radius:28px;
     margin-bottom:22px;
+    max-width:100%;
   }
+  .date-badge .d-part{ white-space:nowrap; }
   .date-badge .arrow{ font-size:.7em; opacity:.7; }
 
   /* CTA buttons */
@@ -152,6 +156,10 @@
   .num-lg{ font-size:1.08em; }
   .unit{ font-size:.62em; font-weight:900; }
   .main-event .date-badge{ font-size:clamp(24px,6vw,32px); }
+
+  @media (max-width:420px){
+    .main-event .date-badge{ font-size:clamp(18px,5vw,24px); padding:9px 16px; }
+  }
 
   /* ---------------- Product showcase ---------------- */
   .oshi{ background:var(--paper); }
@@ -304,7 +312,7 @@
     <div class="inner">
       <p class="lead-in">まずはこちらから。</p>
       <p class="eyebrow">POINT UP CAMPAIGN</p>
-      <div class="date-badge">09.01 <span class="wd">TUE</span><span class="arrow">→</span>09.30 <span class="wd">WED</span></div>
+      <div class="date-badge"><span class="d-part">09.01 <span class="wd">TUE</span></span><span class="d-part"><span class="arrow">→</span> 09.30 <span class="wd">WED</span></span></div>
       <h2>最大10,000<br>POINT 当たる！</h2>
       <p class="sub">9月いっぱい開催</p>
       <a class="cta cta-on-yellow" href="https://www.rakuten.co.jp/bigbossshibazaki/contents/202608_max10000point/" target="_blank" rel="noopener">まずはここから。</a>
@@ -315,7 +323,7 @@
     <div class="inner">
       <p class="lead-in">そして、今回いちばんの目玉がこちら。</p>
       <p class="eyebrow">楽天スーパーSALE</p>
-      <div class="date-badge">09.04 <span class="wd">FRI</span> 20:00<span class="arrow">→</span>09.11 <span class="wd">FRI</span> 01:59</div>
+      <div class="date-badge"><span class="d-part">09.04 <span class="wd">FRI</span> 20:00</span><span class="d-part"><span class="arrow">→</span> 09.11 <span class="wd">FRI</span> 01:59</span></div>
       <h2>エントリーするだけで</h2>
       <div class="point"><small>POINT</small><span class="num-lg">5</span><span class="unit">倍</span>！</div>
       <p class="desc">店内全品対象</p>
@@ -343,7 +351,7 @@
 
   <section class="oshi">
     <div class="inner">
-      <p class="lead-in" style="color:var(--ink);">そして最後に、</p>
+      <p class="lead-in" style="color:var(--ink);">気になる商品、まだまだ続きます。</p>
       <p class="eyebrow" style="color:var(--red-deep);">BIG BOSS</p>
       <h2>今月の<span style="color:var(--red-deep);">推し。</span></h2>
       <div class="grid">
