@@ -178,25 +178,50 @@
   }
   .guerrilla-slot{
     flex:1;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    aspect-ratio:2.4/1;
-    border:2px dashed rgba(255,255,255,.5);
+    display:block;
     border-radius:14px;
-    background:rgba(255,255,255,.08);
-    padding:12px;
+    overflow:hidden;
+    box-shadow:0 4px 0 rgba(0,0,0,.2);
   }
-  .guerrilla-slot .slot-label{
-    font-size:14px;
-    font-weight:700;
-    line-height:1.6;
-    color:#fff;
-    opacity:.85;
-    text-align:center;
-  }
+  .guerrilla-slot img{ width:100%; display:block; }
   @media (max-width:520px){
     .guerrilla-grid{ flex-direction:column; }
+  }
+
+  /* ---------------- Countdown ---------------- */
+  .countdown{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .countdown-box{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background:rgba(255,255,255,.12);
+    border:2px solid rgba(255,255,255,.6);
+    border-radius:12px;
+    padding:10px 16px;
+    min-width:64px;
+  }
+  .countdown-num{
+    font-size:clamp(24px,6vw,34px);
+    font-weight:900;
+    line-height:1;
+    font-variant-numeric:tabular-nums;
+  }
+  .countdown-label{
+    font-size:12px;
+    font-weight:700;
+    margin-top:4px;
+    opacity:.85;
+  }
+  .countdown-note{
+    margin:14px 0 0;
+    font-size:13px;
+    font-weight:700;
+    opacity:.75;
   }
 
   /* ---------------- Point-up banner slots (banners added later) ---------------- */
@@ -435,7 +460,20 @@
     </div>
   </section>
 
-  <section class="on-red" style="padding:34px 0;">
+  <section class="on-red countdown-section" style="padding:32px 0 8px;">
+    <div class="inner">
+      <p class="eyebrow" style="font-size:13px; opacity:.85;">楽天スーパーSALE 終了まで</p>
+      <div class="countdown" id="ssCountdown">
+        <div class="countdown-box"><span class="countdown-num" id="cdDays">--</span><span class="countdown-label">日</span></div>
+        <div class="countdown-box"><span class="countdown-num" id="cdHours">--</span><span class="countdown-label">時間</span></div>
+        <div class="countdown-box"><span class="countdown-num" id="cdMinutes">--</span><span class="countdown-label">分</span></div>
+        <div class="countdown-box"><span class="countdown-num" id="cdSeconds">--</span><span class="countdown-label">秒</span></div>
+      </div>
+      <p class="countdown-note">9/11(金) 01:59 まで</p>
+    </div>
+  </section>
+
+  <section class="on-red" style="padding:20px 0 34px;">
     <p class="eyebrow" style="font-size:13px; opacity:.85;">BIG BOSS ワクワク祭り</p>
     <h2 style="font-size:clamp(24px,6.5vw,32px); margin-bottom:0;">EVENT GUIDE</h2>
   </section>
@@ -443,13 +481,13 @@
   <section class="on-red guerrilla">
     <div class="inner">
       <p class="eyebrow" style="font-size:13px; opacity:.85;">9/4 20:00 → 9/5 23:59 限定</p>
-      <h2 style="font-size:clamp(22px,5.5vw,28px); margin-bottom:20px;">ゲリラクーポン</h2>
+      <h2 style="font-size:clamp(20px,4.6vw,26px); margin-bottom:20px;">増税前にお得！<br>「ゴールドスター」ゲリラクーポン</h2>
       <div class="guerrilla-grid">
         <a class="guerrilla-slot" href="https://coupon.rakuten.co.jp/getCoupon?getkey=Qk0yTS1PUUNWLVhDTVctUlBUWA--&rt=" target="_blank" rel="noopener">
-          <span class="slot-label">400円OFFクーポン<br>バナー準備中</span>
+          <img src="images/banner-guerrilla-400.jpg" alt="ゲリラクーポン 400円OFF 先着100名様限定">
         </a>
         <a class="guerrilla-slot" href="https://coupon.rakuten.co.jp/getCoupon?getkey=UTlDQS1ZMkw1LUlOUUwtUFZYMA--&rt=" target="_blank" rel="noopener">
-          <span class="slot-label">500円OFFクーポン<br>バナー準備中</span>
+          <img src="images/banner-guerrilla-500.jpg" alt="ゲリラクーポン 500円OFF 新規の方限定">
         </a>
       </div>
     </div>
@@ -680,5 +718,36 @@
   </section>
 
 </div>
+
+<script>
+(function(){
+  var target = new Date('2026-09-11T01:59:00+09:00').getTime();
+  var elDays = document.getElementById('cdDays');
+  var elHours = document.getElementById('cdHours');
+  var elMinutes = document.getElementById('cdMinutes');
+  var elSeconds = document.getElementById('cdSeconds');
+  if (!elDays) return;
+  function pad(n){ return String(n).padStart(2, '0'); }
+  var timer;
+  function tick(){
+    var diff = target - Date.now();
+    if (diff <= 0) {
+      elDays.textContent = '0';
+      elHours.textContent = '00';
+      elMinutes.textContent = '00';
+      elSeconds.textContent = '00';
+      clearInterval(timer);
+      return;
+    }
+    var totalSeconds = Math.floor(diff / 1000);
+    elDays.textContent = Math.floor(totalSeconds / 86400);
+    elHours.textContent = pad(Math.floor((totalSeconds % 86400) / 3600));
+    elMinutes.textContent = pad(Math.floor((totalSeconds % 3600) / 60));
+    elSeconds.textContent = pad(totalSeconds % 60);
+  }
+  tick();
+  timer = setInterval(tick, 1000);
+})();
+</script>
 </body>
 </html>
