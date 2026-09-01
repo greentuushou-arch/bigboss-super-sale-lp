@@ -170,6 +170,47 @@
     .main-event .date-badge{ font-size:clamp(18px,5vw,24px); padding:9px 16px; }
   }
 
+  /* ---------------- Point-up banner slots (banners added later) ---------------- */
+  .pointup-grid{
+    display:flex;
+    flex-direction:column;
+    gap:26px;
+    margin-top:8px;
+  }
+  .pointup-block{ text-align:center; }
+  .banner-slot{
+    aspect-ratio:2.4/1;
+    border:2px dashed rgba(255,255,255,.45);
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,.08);
+    padding:12px;
+  }
+  .banner-slot .slot-label{
+    font-size:14px;
+    font-weight:700;
+    line-height:1.6;
+    color:#fff;
+    opacity:.8;
+  }
+  .more-link{
+    display:inline-block;
+    margin-top:12px;
+    font-size:15px;
+    font-weight:900;
+    color:var(--yellow);
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  .pointup-sub{
+    margin-top:38px;
+    padding-top:32px;
+    border-top:1px solid rgba(255,255,255,.25);
+  }
+  .pointup-sub-title{ font-size:19px; font-weight:900; margin:0 0 14px; }
+
   /* ---------------- Product showcase ---------------- */
   .oshi{ background:var(--paper); }
   .oshi .grid{
@@ -383,24 +424,47 @@
     </div>
   </section>
 
-  <section class="on-blue">
+  <section class="on-blue pointup">
     <div class="inner">
       <p class="lead-in">エントリー不要でも、うれしい特典があります。</p>
       <p class="eyebrow">楽天スーパーSALE期間中</p>
-      <h2>エントリーなしでも<br>POINT <span class="point-mid"><span class="num-lg">2</span><span class="unit">倍</span></span>商品<br>多数！</h2>
-      <a class="cta cta-on-blue" href="#" target="_blank" rel="noopener">対象商品、あります。</a>
+      <h2>ポイントUP商品</h2>
+
+      <div class="pointup-grid">
+        <div class="pointup-block">
+          <div class="banner-slot"><span class="slot-label">【ポイント10倍】<br>バナー準備中</span></div>
+          <a class="more-link" href="https://search.rakuten.co.jp/search/mall/%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%BB%E3%83%BC%E3%83%AB%E6%9C%9F%E9%96%93%E2%98%85P10%E5%80%8D/?sf=1&sid=224915" target="_blank" rel="noopener">▼もっと見る</a>
+        </div>
+        <div class="pointup-block">
+          <div class="banner-slot"><span class="slot-label">【ポイント5倍】<br>バナー準備中</span></div>
+          <a class="more-link" href="https://search.rakuten.co.jp/search/mall/%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%BB%E3%83%BC%E3%83%AB%E6%9C%9F%E9%96%93%E2%98%85P5%E5%80%8D/?sf=1&sid=224915" target="_blank" rel="noopener">▼もっと見る</a>
+        </div>
+        <div class="pointup-block">
+          <div class="banner-slot"><span class="slot-label">【ポイント3倍】<br>バナー準備中</span></div>
+          <a class="more-link" href="https://search.rakuten.co.jp/search/mall/%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%BB%E3%83%BC%E3%83%AB%E6%9C%9F%E9%96%93%E2%98%85P3%E5%80%8D/?sf=1&sid=224915" target="_blank" rel="noopener">▼もっと見る</a>
+        </div>
+      </div>
+
+      <div class="pointup-sub">
+        <p class="pointup-sub-title">ボジョレー ヌーボー</p>
+        <div class="pointup-block">
+          <div class="banner-slot"><span class="slot-label">ボジョレー ヌーボー<br>バナー準備中</span></div>
+          <p class="sub" style="margin:12px 0 0; font-size:16px;">早割5%クーポン配布中</p>
+          <a class="more-link" href="https://search.rakuten.co.jp/search/mall/%E3%83%9C%E3%82%B8%E3%83%A7%E3%83%AC%E3%83%BC+%E3%83%8C%E3%83%BC%E3%83%9C%E3%83%BC2026/?sid=224915" target="_blank" rel="noopener">対象商品はこちら ▼</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="on-yellow">
     <div class="inner">
-      <div class="bubble" style="margin-bottom:24px;">
-        <p>まずはクーポンをGETしておくとスムーズです。</p>
-        <p>決済画面で利用できるクーポンを選んでから、<br>確定ボタンを押してくださいね。</p>
-      </div>
       <p class="eyebrow">楽天スーパーSALE期間中</p>
       <h2>お得な COUPON<br>いろいろ！</h2>
       <a class="cta cta-on-yellow" href="#" target="_blank" rel="noopener">買う前にチェック。</a>
+      <div class="bubble" style="margin-top:28px;">
+        <p>まずはクーポンをGETしておくとスムーズです。</p>
+        <p>決済画面で利用できるクーポンを選んでから、<br>確定ボタンを押してくださいね。</p>
+      </div>
     </div>
   </section>
 
