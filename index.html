@@ -170,6 +170,35 @@
     .main-event .date-badge{ font-size:clamp(18px,5vw,24px); padding:9px 16px; }
   }
 
+  /* ---------------- Guerrilla coupon banners (added later) ---------------- */
+  .guerrilla-grid{
+    display:flex;
+    flex-direction:row;
+    gap:22px;
+  }
+  .guerrilla-slot{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    aspect-ratio:2.4/1;
+    border:2px dashed rgba(255,255,255,.5);
+    border-radius:14px;
+    background:rgba(255,255,255,.08);
+    padding:12px;
+  }
+  .guerrilla-slot .slot-label{
+    font-size:14px;
+    font-weight:700;
+    line-height:1.6;
+    color:#fff;
+    opacity:.85;
+    text-align:center;
+  }
+  @media (max-width:520px){
+    .guerrilla-grid{ flex-direction:column; }
+  }
+
   /* ---------------- Point-up banner slots (banners added later) ---------------- */
   .pointup-grid{
     display:flex;
@@ -335,9 +364,10 @@
 
   /* campaign section headline — big attention grab, tuned separately for mobile */
   .point-headline{
-    font-size:clamp(40px,11vw,126px);
+    font-size:clamp(40px,8vw,80px);
     line-height:1.15;
   }
+  .point-headline .label-sm{ font-size:.72em; font-weight:900; }
   @media (max-width:520px){
     .point-headline{ font-size:clamp(32px,11.5vw,46px); line-height:1.25; }
   }
@@ -410,12 +440,27 @@
     <h2 style="font-size:clamp(24px,6.5vw,32px); margin-bottom:0;">EVENT GUIDE</h2>
   </section>
 
+  <section class="on-red guerrilla">
+    <div class="inner">
+      <p class="eyebrow" style="font-size:13px; opacity:.85;">9/4 20:00 → 9/5 23:59 限定</p>
+      <h2 style="font-size:clamp(22px,5.5vw,28px); margin-bottom:20px;">ゲリラクーポン</h2>
+      <div class="guerrilla-grid">
+        <a class="guerrilla-slot" href="https://coupon.rakuten.co.jp/getCoupon?getkey=Qk0yTS1PUUNWLVhDTVctUlBUWA--&rt=" target="_blank" rel="noopener">
+          <span class="slot-label">400円OFFクーポン<br>バナー準備中</span>
+        </a>
+        <a class="guerrilla-slot" href="https://coupon.rakuten.co.jp/getCoupon?getkey=UTlDQS1ZMkw1LUlOUUwtUFZYMA--&rt=" target="_blank" rel="noopener">
+          <span class="slot-label">500円OFFクーポン<br>バナー準備中</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="on-yellow">
     <div class="inner">
       <p class="lead-in">まずはこちらから。</p>
       <p class="eyebrow">POINT BACK CAMPAIGN</p>
       <div class="date-badge"><span class="d-part">09.01 <span class="wd">TUE</span></span><span class="d-part"><span class="arrow">→</span> 09.30 <span class="wd">WED</span></span></div>
-      <h2 class="point-headline">最大10,000<br>POINT 当たる！</h2>
+      <h2 class="point-headline"><span class="label-sm">最大</span>10,000<br>POINT 当たる！</h2>
       <p class="sub">9月いっぱい開催</p>
       <a class="cta cta-on-yellow" href="https://www.rakuten.co.jp/bigbossshibazaki/contents/202608_max10000point/" target="_blank" rel="noopener">まずはここから。</a>
     </div>
