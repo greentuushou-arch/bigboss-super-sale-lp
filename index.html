@@ -54,6 +54,11 @@
   }
   .fv img{ width:100%; height:auto; display:block; }
   .fv a{ display:block; }
+  .fv-split{ display:flex; }
+  .fv-split a{ display:block; }
+  .fv-split a:first-child{ width:44.375%; }
+  .fv-split a:last-child{ width:55.625%; }
+  .fv-split img{ width:100%; display:block; }
   .confetti{
     position:absolute;
     inset:0;
@@ -447,7 +452,14 @@
     <a href="https://www.rakuten.co.jp/bigbossshibazaki/contents/202608_max10000point/" target="_blank" rel="noopener">
       <img src="images/fv_c_chance.jpg" alt="最大チャンス！9月中はずーっとポイント山分けキャンペーン 最大10,000POINT当たる！詳細はこちら">
     </a>
-    <img src="images/fv_d_bottom.jpg" alt="お得なCOUPONいろいろ！ BIG BOSS今月の推し。金麦・金麦糖質75%オフ・角ハイボール・こだわり酒場レモンサワー等">
+    <div class="fv-split">
+      <a href="#coupon">
+        <img src="images/fv_e_coupon.jpg" alt="お得なクーポンいろいろ！ 時間限定・枚数限定などおトクなクーポンがもりだくさん！">
+      </a>
+      <a href="#oshi">
+        <img src="images/fv_f_oshi.jpg" alt="BIG BOSS今月の推し。金麦・金麦糖質75%オフ・角ハイボール・こだわり酒場レモンサワー等">
+      </a>
+    </div>
   </div>
 
   <section class="greeting">
